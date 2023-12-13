@@ -1,15 +1,8 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-    <head>
-<!--/*/ <th:block th:include="fragments/template.html :: header">
-        </th:block> /*/-->
-    </head>
+<html layout:decorate="~{layouts/layout}" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
     <body>
-        <h1>This is the header section common to all page</h1>
-        <div th:replace="fragments/template.html :: body"></div>
-        <div>
+        <div layout:fragment="content">
             <p th:text="'Java says ' + ${message}">Placeholder text</p>
         </div>
-        <div th:replace="fragments/template.html :: footer"></div>
     </body>
 </html>
